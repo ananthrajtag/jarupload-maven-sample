@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "master"
+        label "LINUX"
     }
     tools {
         // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
@@ -23,7 +23,8 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/danielalejandrohc/jarupload-maven-sample.git';
+                    checkout scm
+                   // git 'https://github.com/danielalejandrohc/jarupload-maven-sample.git';
                 }
             }
         }
